@@ -1,8 +1,9 @@
 import streamlit as st
 import pickle
-
+import nltk
+from nltk.corpus import stopwords
 import string
-
+from nltk.stem.porter import PorterStemmer
 
 # Initialize PorterStemmer
 ps = PorterStemmer()
@@ -69,4 +70,6 @@ if st.button('Predict'):
             st.markdown("<h2 style='color: red;'>⚠️ Spam</h2>", unsafe_allow_html=True)
         else:
             st.markdown("<h2 style='color: green;'>✅ Not Spam</h2>", unsafe_allow_html=True)
+
+
 
